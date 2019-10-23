@@ -22,6 +22,5 @@ CREATE TABLE requestor_transaction (
     created_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     modified_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     active BOOLEAN NOT NULL DEFAULT 1,
-    UNIQUE (category_id),
     CHECK (fund_needed > 0)
 );
