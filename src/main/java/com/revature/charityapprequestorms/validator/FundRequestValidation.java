@@ -22,7 +22,7 @@ public class FundRequestValidation {
 	}
 
 	/** Fund request validation **/
-	public void loginValidator(FundRequest fundRequest) throws ValidatorException {
+	public void fundRequestValidator(FundRequest fundRequest) throws ValidatorException {
 		int categoryid = fundRequest.getCategoryId();
 		int requestorId = fundRequest.getRequestedBy();
 		double fundNeeded = fundRequest.getFundNeeded();
