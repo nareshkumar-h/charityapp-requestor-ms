@@ -29,8 +29,8 @@ public class FundRequestController {
 	/**
 	 * Raise fund request in Fund Request Controller
 	 * 
-	 * @Param categoryId, requestedBy,fundNeeded If the c is Invalid, return
-	 *        ServiceException If the credential is valid, return UserDetails object
+	 * @Param categoryId, requestedBy,fundNeeded If the object is Invalid, return
+	 *        ServiceException ,If the credential is valid, return UserDetails object
 	 */
 
 	@PostMapping
