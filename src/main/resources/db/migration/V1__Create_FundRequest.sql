@@ -9,7 +9,9 @@ CREATE TABLE fund_request (
     UNIQUE (category_id),
     active BOOLEAN NOT NULL DEFAULT 1,
     CHECK (fund_needed > 0)
+    
 );
+
 
 CREATE TABLE requestor_transaction (
     id INT AUTO_INCREMENT PRIMARY KEY,
