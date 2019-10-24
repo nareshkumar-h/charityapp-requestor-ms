@@ -37,12 +37,12 @@ public class FundRequestController {
 	/**
 	 * Raise fund request in Fund Request Controller
 	 * 
-	 * @Param categoryId, requestedBy,fundNeeded If the object is Invalid, return
+	 * @RequestBody  If the object is Invalid, return
 	 *        ServiceException ,If the credential is valid, return UserDetails object
 	 */
 
 	@PostMapping
-	@ApiOperation(value = "RaiseFundRequest API")
+	@ApiOperation(value = "RaiseRequest API")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Fund added Successfully", response = FundRequestDto.class),
 			@ApiResponse(code = 400, message = "Fund cannot be added", response = Message.class) })
 	public ResponseEntity<?> addRequest(@RequestBody FundRequestDto fundRequestDto) {
@@ -65,8 +65,8 @@ public class FundRequestController {
 	 * valid, return UserDetails object
 	 */
 
-	@GetMapping("/listCurrentFundRequest")
-	@ApiOperation(value = "listCurrentFundRequest API")
+	@GetMapping("/listCurrentRequest")
+	@ApiOperation(value = "listCurrentRequest API")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Success", response = FundRequest.class),
 			@ApiResponse(code = 400, message = "Fund request cannot be listed", response = Message.class) })
 
@@ -87,14 +87,14 @@ public class FundRequestController {
 
 	}
 	/**
-	 * List Fund request in Fund request Controller
+	 * List All Fund request in Fund request Controller
 	 * 
 	 * If the list is returned as null, return ServiceException If the list is
 	 * valid, return UserDetails object
 	 */
 
-	@GetMapping("/listAllFundRequest")
-	@ApiOperation(value = "listAllFundRequest API")
+	@GetMapping("/listAllRequest")
+	@ApiOperation(value = "listAllRequest API")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Success", response = RequestorTransaction.class),
 			@ApiResponse(code = 400, message = "Fund request cannot be listed", response = Message.class) })
 
