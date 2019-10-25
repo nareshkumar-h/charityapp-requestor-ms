@@ -95,8 +95,8 @@ public class FundRequestController {
 	 * valid, return UserDetails object
 	 */
 
-	@GetMapping("/listAllRequest")
-	@ApiOperation(value = "listAllRequest API")
+	@GetMapping("/RequestorTransaction")
+	@ApiOperation(value = "List Requestor Transaction API")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Success", response = RequestorTransaction.class),
 			@ApiResponse(code = 400, message = "Fund request cannot be listed", response = Message.class) })
 

@@ -1,7 +1,7 @@
 package com.revature.charityapprequestorms.dto;
 
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import lombok.Data;
 
@@ -17,9 +17,9 @@ public class FundRequestDto {
 
 	private int requestedBy;
 
-	private LocalDateTime createdDate;
+	private LocalDate createdDate;
 
-	private LocalDateTime modifiedDate;
+	private LocalDate modifiedDate;
 
 	private boolean active;
 
