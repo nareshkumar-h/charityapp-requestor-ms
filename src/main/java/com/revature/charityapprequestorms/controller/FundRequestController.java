@@ -52,12 +52,14 @@ public class FundRequestController {
 			return new ResponseEntity<>(HttpStatus.OK);
 
 		} catch (ServiceException e) {
-			LOGGER.error("Exception",e);
+			LOGGER.error("ServiceException",e);
 
 			Message message = new Message(e.getMessage());
 			return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
 		}
 	}
+	
+	
 	/**
 	 * List  Current Fund request in Fund request Controller
 	 * 
