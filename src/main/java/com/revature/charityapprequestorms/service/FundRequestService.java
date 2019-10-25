@@ -11,10 +11,12 @@ import org.springframework.transaction.annotation.Transactional;
 import com.revature.charityapprequestorms.dto.FundRequestDto;
 import com.revature.charityapprequestorms.dto.MessageConstant;
 import com.revature.charityapprequestorms.exception.ServiceException;
+import com.revature.charityapprequestorms.exception.ValidatorException;
 import com.revature.charityapprequestorms.model.FundRequest;
 import com.revature.charityapprequestorms.model.RequestorTransaction;
 import com.revature.charityapprequestorms.repository.FundRequestRepository;
 import com.revature.charityapprequestorms.repository.RequestorTransactionRepository;
+import com.revature.charityapprequestorms.validator.FundRequestValidation;
 
 @Service
 public class FundRequestService {
@@ -24,6 +26,9 @@ public class FundRequestService {
 
 	@Autowired
 	RequestorTransactionRepository requestorTransactionRepo;
+	
+	@Autowired
+	FundRequestValidation fundRequestValidation;
 	
 	
 
@@ -35,6 +40,7 @@ public class FundRequestService {
 	 */
 	@Transactional
 	public void addFundRequest(final FundRequestDto fundRequestDto) throws ServiceException {
+		
 
 		try {
 			FundRequest fundRequest = new FundRequest();
@@ -47,6 +53,8 @@ public class FundRequestService {
 
 			FundRequest fundResp = fundRequestRepo.findById(fundRequestDto.getCategoryId());
 			if (fundResp == null) {
+				fundRequestValidation.fundRequestValidator(fundRequest);
+				
 
 				fundRequest.setActive(true);
 				fundRequest.setCreatedDate(LocalDateTime.now());
@@ -70,7 +78,11 @@ public class FundRequestService {
 				throw new ServiceException(MessageConstant.FUND_REQUEST_ADDITION);
 
 			}
-		} catch (Exception e) {
+		} 
+		catch (ValidatorException e) {
+			throw new ServiceException(MessageConstant.FUND_REQUEST_VALIDATOR);
+
+		}catch (Exception e) {
 			throw new ServiceException(MessageConstant.FUND_REQUEST_ADDITION);
 
 		}
