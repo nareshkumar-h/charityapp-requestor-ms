@@ -1,8 +1,11 @@
 package com.revature.charityapprequestorms.validator;
 
+import org.springframework.stereotype.Component;
+
 import com.revature.charityapprequestorms.dto.MessageConstant;
 import com.revature.charityapprequestorms.exception.ValidatorException;
 import com.revature.charityapprequestorms.model.FundRequest;
+@Component
 
 public class FundRequestValidation {
 	private FundRequestValidation() {

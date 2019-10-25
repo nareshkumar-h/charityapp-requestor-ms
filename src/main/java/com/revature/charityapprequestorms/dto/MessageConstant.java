@@ -32,5 +32,9 @@ public class MessageConstant {
 	public static final String FUND_REQUEST_ADDITION = "Unable to add fund,category id Exists";
 
 	public static final String FUND_REQUEST_ALTER = "Unable to alter fund";
+	
+	//Validator Exception Messages
+	
+	public static final String FUND_REQUEST_VALIDATOR="Give valid inputs";
 
 }
