@@ -14,8 +14,8 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "fund_request")
-public class FundRequest {
+@Table(name = "requestor_transaction")
+public class RequestorTransaction {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
@@ -26,6 +26,9 @@ public class FundRequest {
 
 	@Column(name = "fund_needed")
 	private double fundNeeded;
+	
+	@Column(name = "status")
+	private String status;
 
 	@Column(name = "requested_by")
 	private int requestedBy;
