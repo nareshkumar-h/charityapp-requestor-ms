@@ -1,6 +1,6 @@
 package com.revature.charityapprequestorms.service;
 
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -58,8 +58,8 @@ public class FundRequestService {
 				
 
 				fundRequest.setActive(true);
-				fundRequest.setCreatedDate(LocalDate.now());
-				fundRequest.setModifiedDate(LocalDate.now());
+				fundRequest.setCreatedDate(LocalDateTime.now());
+				fundRequest.setModifiedDate(LocalDateTime.now());
 
 				fundRequestRepo.save(fundRequest);
 				RequestorTransaction requestorTransaction = new RequestorTransaction();

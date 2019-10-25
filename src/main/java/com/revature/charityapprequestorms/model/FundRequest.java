@@ -1,8 +1,8 @@
 package com.revature.charityapprequestorms.model;
 
 
-import java.time.LocalDate;
 
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,10 +32,10 @@ public class FundRequest {
 	private int requestedBy;
 
 	@Column(name = "created_date")
-	private LocalDate createdDate;
+	private LocalDateTime createdDate;
 
 	@Column(name = "modified_date")
-	private LocalDate modifiedDate;
+	private LocalDateTime modifiedDate;
 
 	@Column(name = "active")
 	private boolean active;
